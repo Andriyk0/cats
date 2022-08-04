@@ -1,0 +1,56 @@
+<div class="main">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Shose cat breed</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="food" (ngModelChange)="getFiltered()">
+        <mat-option value="All">
+          All
+        </mat-option>
+        <mat-option *ngFor="let breed of catsBreed" [value]="breed.id">
+          {{breed.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="card">
+    <div *ngFor="let cat of showCats">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{cat.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{cat?.image?.url}} alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p class="card__description">{{cat.description}}</p>
+        </mat-card-content>
+        <div class="card__info">
+          <p>Adaptability</p>
+          <mat-progress-bar mode="determinate" value={{cat.adaptability*20}}></mat-progress-bar>
+        </div>
+        <div class="card__info">
+          <p>Affection level</p>
+          <mat-progress-bar mode="determinate" value={{cat.affection_level*20}}></mat-progress-bar>
+        </div>
+        <div class="card__info">
+          <p>Child friendly</p>
+          <mat-progress-bar mode="determinate" value={{cat.child_friendly*20}}></mat-progress-bar>
+        </div>
+        <div class="card__info">
+          <p>Dog friendly</p>
+          <mat-progress-bar mode="determinate" value={{cat.dog_friendly*20}}></mat-progress-bar>
+        </div>
+        <div class="card__info">
+          <p>Energy level</p>
+          <mat-progress-bar mode="determinate" value={{cat.energy_level*20}}></mat-progress-bar>
+        </div>
+        <div class="card__info">
+          <p>Health issues</p>
+          <mat-progress-bar mode="determinate" value={{cat.health_issues*20}}></mat-progress-bar>
+        </div>
+        <div class="card__info">
+          <p>Intelligence</p>
+          <mat-progress-bar mode="determinate" value={{cat.intelligence*20}}></mat-progress-bar>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

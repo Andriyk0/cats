@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid rgb(192, 191, 191);
+
+  &__title {
+    font-family: cursive;
+    color: gray;
+  }
+
+  &__first_img {
+    height: 100%;
+  }
+
+  &__second_img {
+    height: 100%;
+  }
+}
